@@ -1,7 +1,7 @@
-import '@@styles/globals.css';
-
 import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
+
+import 'styles/globals.css';
 
 import { NextPageWithLayout } from './page';
 
