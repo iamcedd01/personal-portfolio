@@ -1,7 +1,16 @@
 {
-  "name": "portfolio",
+  "name": "boilerplate-tailwindcss",
+  "author": "Cedric Estrada",
+  "description": "A template for creating NextJS with TailwindCSS application",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "homepage": "GIT_REPO_URL",
+  "engines": {
+    "node": ">=16.17.1",
+    "yarn": ">=1.22.19",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
