@@ -1,4 +1,5 @@
 import PrimaryLayout from '@@components/layouts/primary/PrimaryLayout';
+
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
@@ -11,6 +12,6 @@ const Home: NextPageWithLayout = () => {
 
 export default Home;
 
-Home.getLayout = (page) => {
+Home.getLayout = page => {
     return <PrimaryLayout>{page}</PrimaryLayout>;
 };

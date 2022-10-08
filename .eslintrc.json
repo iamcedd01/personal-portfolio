@@ -1,9 +1,167 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
-  "globals": {
-    "React": "readonly"
-  },
-  "rules": {
-    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
-  }
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "eslint:recommended",                                               // Uses the recommended rules from eslint.
+        "plugin:@typescript-eslint/recommended",                            // Uses the recommended rules from the @typescript-eslint/eslint-plugin.
+        "plugin:import/recommended",                                        // Uses the recommended rules from the eslint-plugin-import.
+        "plugin:import/typescript",                                         // Uses the recommended rules for typescript from the eslint-plugin-import (overrides the above ones).
+        "plugin:react-hooks/recommended",
+        "plugin:typescript-sort-keys/recommended",                          // Uses the recommended rules from the eslint-plugin-typescript-sort-keys.
+        "prettier"                                                          // Uses eslint-config-prettier to disable ESLint rules that would conflict with prettier. Make sure this is always the last configuration in the extends array.
+    ],
+    "globals": {
+        "React": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "sort-keys-fix",
+        "typescript-sort-keys",
+        "sort-destructure-keys"
+    ],
+    "rules": {
+        "arrow-parens": ["error", "as-needed"],                             // Require parentheses around arrow function arguments.
+        "curly": "error",                                                   // Enforce consistent brace style for all control statements.
+        "import/no-named-as-default-member": "off",                         // Reports to use of an exported name as a property on the default export.
+        "import/order": [                                                   // Enforce a convention in the order of import statements.
+            "error",
+            {
+                "alphabetize": {
+                    "caseInsensitive": true,
+                    "order": "asc"
+                },
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    [
+                        "parent",
+                        "sibling"
+                    ],
+                    "index"
+                ],
+                "newlines-between": "always",
+                "pathGroups": [
+                    {
+                        "group": "external",
+                        "pattern": "react",
+                        "position": "before"
+                    },
+                    {
+                        "group": "sibling",
+                        "pattern": "**/*.styles",
+                        "position": "after"
+                    },
+                    {
+                        "group": "index",
+                        "pattern": "*.styles",
+                        "patternOptions": { "matchBase": true },
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["builtin"]
+            }
+        ],
+        "lines-around-comment": "error",                                    // Require empty lines around comments.
+        "no-nested-ternary": "off",                                         // Disallow nested ternary expressions.
+        "no-plusplus": "off",                                               // Disallow the unary operators `++` and `--`.
+        "no-unused-vars": [
+            1,
+            { "args": "after-used", "argsIgnorePattern": "^_" }
+        ],
+        "prefer-destructuring": [                                           // Require destructuring from arrays and/or objects.
+            "error",
+            {
+                "array": true,
+                "object": true
+            },
+            {
+                "enforceForRenamedProperties": false
+            }
+        ],
+        "padding-line-between-statements": [                                // Require or disallow padding lines between statements.
+            "error",
+            {
+                "blankLine": "always",
+                "prev": ["const", "let", "var"],
+                "next": "*"
+            },
+            {
+                "blankLine": "any",
+                "prev": ["const", "let", "var"],
+                "next": ["const", "let", "var"]
+            },
+            { 
+                "blankLine": "always", 
+                "prev": "*", 
+                "next": "return" 
+            },
+            {
+                "blankLine": "always",
+                "prev": ["for", "if", "try", "while", "switch"],
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": ["for", "if", "try", "while", "switch"]
+            },
+            { 
+                "blankLine": "any", 
+                "prev": ["export"], 
+                "next": ["export"] 
+            },
+            {
+                "blankLine": "always",
+                "prev": "break",
+                "next": "case"
+            }
+        ],
+        "radix": "off",                                                     // Enforce the consistent use of the radix argument when using `parseInt()`.
+        "react/jsx-sort-props": ["error", {}],
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "sort-destructure-keys/sort-destructure-keys": [
+            "error",
+            { "caseSensitive": false }
+        ],
+        "sort-keys-fix/sort-keys-fix": "error",                             // Require object keys to be sorted.
+        "spaced-comment": [                                                 // Enforce consistent spacing after the // or /* in a comment.
+            "error",
+            "always",
+            {
+                "line": {
+                    "markers": ["/"]
+                },
+                "block": {
+                    "balanced": true
+                }
+            }
+        ],
+        "typescript-sort-keys/interface": "error",                          // Require interface keys to be sorted.
+        "typescript-sort-keys/string-enum": "error",                        // Require string enum members to be sorted.
+        "@typescript-eslint/explicit-module-boundary-types": "off",         // Require explicit return and argument types on exported functions' and classes' public class methods.
+        "@typescript-eslint/naming-convention": [                           // Enforce naming conventions for everything across a codebase.
+            "error",
+            {
+                "selector": "interface",
+                "format": ["PascalCase"],
+                "custom": {
+                "regex": "^I[A-Z]",
+                "match": true
+                }
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off"                         // Disallow usage of the `any` type.
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": "."
+            }
+        },
+        "react": {
+            "version": "detect"
+        }
+    }
 }
