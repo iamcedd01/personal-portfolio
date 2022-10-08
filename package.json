@@ -1,7 +1,7 @@
 {
-    "name": "boilerplate-tailwindcss",
+    "name": "personal-portfolio",
     "author": "Cedric Estrada",
-    "description": "A template for creating NextJS with TailwindCSS application",
+    "description": "Personal portfolio website made using Next.JS & TailwindCSS",
     "version": "0.1.0",
     "private": true,
     "license": "MIT",
