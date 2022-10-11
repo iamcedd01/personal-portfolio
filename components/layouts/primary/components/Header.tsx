@@ -64,7 +64,7 @@ const Header: React.FC = () => {
                 </Link>
 
                 <nav data-cy="nav">
-                    <ul className="items-center flex gap-m">
+                    <ul className="items-center flex gap-2xl">
                         {routes.map(({ label }) => (
                             <li key={label}>
                                 <Link
