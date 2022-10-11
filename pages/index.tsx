@@ -1,12 +1,14 @@
-import PrimaryLayout from '@@components/layouts/primary/PrimaryLayout';
+import Section from 'components/common/Section';
+import PrimaryLayout from 'components/layouts/primary/PrimaryLayout';
 
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
     return (
-        <section>
-            <h1>Welcome to Next.js with TailwindCSS!</h1>
-        </section>
+        <>
+            <Section className=" bg-black h-screen"></Section>
+            <Section className="h-screen bg-slate-400"></Section>
+        </>
     );
 };
 

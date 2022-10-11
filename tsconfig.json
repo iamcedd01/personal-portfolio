@@ -17,10 +17,10 @@
 
         "baseUrl": ".",
         "paths": {
-            "@@components/*": ["components/*"],
-            "@@lib/*": ["lib/*"],
-            "@@pages/*": ["pages/*"],
-            "@@styles/*": ["styles/*"],
+            "components/*": ["components/*"],
+            "lib/*": ["lib/*"],
+            "pages/*": ["pages/*"],
+            "styles/*": ["styles/*"],
             "react": ["./node_modules/@types/react"]
         }
     },
