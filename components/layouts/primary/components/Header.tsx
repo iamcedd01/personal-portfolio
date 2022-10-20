@@ -1,9 +1,10 @@
 import { ComponentType, useEffect, useMemo, useRef, useState } from 'react';
 
-import cx from 'clsx';
+import clsx from 'clsx';
 
 import Link from 'components/common/Link';
 import Section from 'components/common/Section';
+import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
 interface IRoute {
@@ -44,34 +45,25 @@ const Header: React.FC = () => {
     return (
         <Section
             as="header"
-            className={cx('fixed top-0 left-0 h-[unset] transition-all duration-700', {
+            className={clsx('fixed top-0 left-0 h-[unset] transition-all duration-700', {
                 'bg-white': sticky,
             })}
             name="header"
             ref={headerOffset}
-            wrapperClassName={cx('transition-all duration-700', { 'py-m': sticky })}
+            wrapperClassName={clsx('transition-all duration-700', { 'py-m': sticky })}
         >
-            <FlexLayout className="justify-between items-center">
-                <Link
-                    className={cx('text-l font-bold capitalize tracking-widest', {
-                        'text-black': sticky,
-                        'text-white': !sticky,
-                    })}
-                    href="/"
-                    name="brand"
-                >
-                    Cedd
+            <FlexLayout className="items-center justify-between">
+                <Link className="text-l capitalize tracking-widest" href="/" name="brand">
+                    <Text className="font-extrabold text-white" text="Cedd" />{' '}
+                    <Text className="font-bold  text-primaryLight " text="Estrada" />
                 </Link>
 
                 <nav data-cy="nav">
-                    <ul className="items-center flex gap-2xl">
+                    <ul className="flex items-center gap-xl">
                         {routes.map(({ label }) => (
                             <li key={label}>
                                 <Link
-                                    className={cx('text-m font-bold capitalize', {
-                                        'text-black': sticky,
-                                        'text-white': !sticky,
-                                    })}
+                                    className={clsx('text-m capitalize text-white', {})}
                                     href="/"
                                     name={label.toLowerCase()}
                                     onClick={() => console.log(label)}

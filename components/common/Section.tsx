@@ -1,6 +1,6 @@
 import React, { createElement, ReactNode } from 'react';
 
-import cx from 'clsx';
+import clsx from 'clsx';
 
 import useValueAndKey from 'lib/hooks/useValueAndKey';
 import { ICommonProps } from 'types/globals';
@@ -16,11 +16,13 @@ const Section = React.forwardRef<HTMLDivElement, ISectionProps>(
         createElement(
             as,
             {
-                className: cx('section', className),
+                className: clsx('section', className),
                 ['data-cy']: useValueAndKey(name, 'section'),
                 ref,
             },
-            <div className={cx('max-w-[1280px] mx-auto py-2xl', wrapperClassName)}>{children}</div>
+            <div className={clsx('m-auto w-full py-2xl xs:max-w-[768px] xl:max-w-[1280px]', wrapperClassName)}>
+                {children}
+            </div>
         )
 );
 

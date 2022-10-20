@@ -5,13 +5,10 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link
-                        href="https://fonts.googleapis.com"
-                        rel="preconnect"
-                    />
+                    <link href="https://fonts.googleapis.com" rel="preconnect" />
                     <link href="https://fonts.gstatic.com" rel="preconnect" />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
                         rel="stylesheet"
                     />
                 </Head>

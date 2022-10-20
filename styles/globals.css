@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html,
+    body {
+        @apply font-raleway;
+    }
+
+    button {
+        line-height: 1.75;
+        @apply relative my-2 box-border inline-flex min-w-[64px] cursor-pointer appearance-none items-center justify-center rounded border-none px-8 py-2 align-middle text-m uppercase text-white outline-none transition duration-200;
+    }
+}
+
 @layer components {
+    .button.primary {
+        @apply bg-gradient-to-b from-primary to-primaryDark;
+    }
+
     .section {
-        @apply h-full w-full;
+        @apply flex h-full w-full;
     }
 }

@@ -1,10 +1,20 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 const spacing = {
-    '2xl': '40px',
-    l: '24px',
-    m: '16px',
-    s: '8px',
-    xl: '32px',
     xs: '4px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    s: '8px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    m: '16px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    l: '24px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    xl: '32px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    '2xl': '40px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    '3xl': '60px',
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -13,6 +23,26 @@ module.exports = {
     plugins: [require('tailwindcss'), require('precss'), require('autoprefixer')],
     theme: {
         extend: {
+            animation: {
+                blink: 'blink 1s step-start infinite',
+            },
+            colors: {
+                primary: '#F48882',
+                primaryDark: '#AA5F5B',
+                primaryLight: '#F69F9B',
+
+                secondary: '#25262A',
+                secondaryDark: '#1A1B20',
+                secondaryLight: '#2D2E32',
+            },
+            fontFamily: {
+                raleway: ['Raleway', ...defaultTheme.fontFamily.sans],
+            },
+            keyframes: {
+                blink: {
+                    '50%': { opacity: 0 },
+                },
+            },
             margin: spacing,
             maxWidth: {
                 wrapper: '1280px',
@@ -25,11 +55,18 @@ module.exports = {
         fontSize: spacing,
         gap: spacing,
         screens: {
-            lg: '1200px',
-            md: '900px',
-            sm: '600px',
-            xl: '1536px',
-            xs: '375px',
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            xs: { max: '639px' },
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            sm: { min: '640px' },
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            md: { min: '768px' },
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            lg: { min: '1024px' },
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            xl: { min: '1280px' },
+            // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+            '2xl': { min: '1536px' },
         },
     },
 };
