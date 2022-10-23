@@ -5,18 +5,40 @@
 @layer base {
     html,
     body {
-        @apply font-raleway;
+        @apply font-raleway text-general;
     }
 
     button {
         line-height: 1.75;
-        @apply relative my-2 box-border inline-flex min-w-[64px] cursor-pointer appearance-none items-center justify-center rounded border-none px-8 py-2 align-middle text-m uppercase text-white outline-none transition duration-200;
+        @apply relative my-2 box-border inline-flex min-w-[64px] cursor-pointer appearance-none items-center justify-center rounded border-none px-8 py-2 align-middle text-m uppercase text-white outline-none transition-all duration-200;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-bold uppercase tracking-widest text-primaryLight;
+    }
+
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-l;
     }
 }
 
 @layer components {
-    .button.primary {
+    .button.primary:not(.outlined) {
         @apply bg-gradient-to-b from-primary to-primaryDark;
+    }
+
+    .button.primary.outlined {
+        @apply border border-solid border-primary text-primaryLight hover:bg-gradient-to-b hover:from-primary hover:to-primaryDark hover:text-white;
     }
 
     .section {

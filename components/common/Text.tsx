@@ -6,7 +6,7 @@ import useValueAndKey from 'lib/hooks/useValueAndKey';
 import { ICommonProps } from 'types/globals';
 
 interface ITextProps extends ICommonProps {
-    as?: 'p' | 'span';
+    as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     text?: string;
 }
 

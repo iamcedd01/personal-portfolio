@@ -7,14 +7,14 @@ import { FlexLayout } from 'components/layouts/content';
 
 const Profile: React.FC = () => {
     return (
-        <FlexLayout className="flex-col-reverse justify-between gap-3xl lg:flex-row xl:flex-row 2xl:flex-row">
-            <FlexLayout className="w-3/4 flex-col justify-center">
-                <Text className="text-l font-bold leading-tight text-white" text="Hey There!" />
-                <Text className="text-2xl leading-tight tracking-wider text-white">
+        <FlexLayout className="flex-col-reverse justify-between gap-2xl lg:flex-row xl:flex-row 2xl:flex-row">
+            <FlexLayout className="w-3/4 flex-col justify-center gap-none">
+                <Text className="text-l font-bold leading-tight" text="Hey There!" />
+                <Text className="text-2xl leading-tight tracking-wider">
                     I am <Typed values={['Cedric Estrada', 'Fullstack Developer', 'Freelancer']} />
                 </Text>
                 <Text
-                    className="py-m text-white"
+                    className="py-m text-justify"
                     text="A professional software engineer with more than four years of experience. If you're looking for a full-stack developer to build your applications and grow your business, you've found what you need. Let's Work Together!"
                 />
                 <div>

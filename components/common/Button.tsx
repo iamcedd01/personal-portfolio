@@ -7,16 +7,18 @@ import { ICommonProps } from 'types/globals';
 interface IButtonProps extends ICommonProps {
     color?: 'primary' | 'secondary' | 'accent';
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+    outlined?: boolean;
     text?: string;
 }
 
-const Button: React.FC<IButtonProps> = ({ children, className, color = 'primary', text, ...props }) => {
+const Button: React.FC<IButtonProps> = ({ children, className, color = 'primary', outlined, text, ...props }) => {
     return (
         <button
             className={clsx(
                 'button',
                 {
                     [color]: !!color,
+                    outlined: !!outlined,
                 },
                 className
             )}

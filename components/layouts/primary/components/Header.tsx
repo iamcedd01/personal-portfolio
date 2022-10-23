@@ -45,17 +45,24 @@ const Header: React.FC = () => {
     return (
         <Section
             as="header"
-            className={clsx('fixed top-0 left-0 h-[unset] transition-all duration-700', {
+            className={clsx('fixed top-0 left-0 z-10 h-[unset] transition-all duration-300', {
                 'bg-white': sticky,
             })}
             name="header"
+            padding={sticky ? 'm' : '2xl'}
             ref={headerOffset}
-            wrapperClassName={clsx('transition-all duration-700', { 'py-m': sticky })}
+            wrapperClassName="transition-all duration-300"
         >
             <FlexLayout className="items-center justify-between">
                 <Link className="text-l capitalize tracking-widest" href="/" name="brand">
-                    <Text className="font-extrabold text-white" text="Cedd" />{' '}
-                    <Text className="font-bold  text-primaryLight " text="Estrada" />
+                    <Text
+                        className={clsx('font-extrabold', {
+                            'text-secondaryDark': sticky,
+                            'text-white': !sticky,
+                        })}
+                        text="Cedd"
+                    />{' '}
+                    <Text className="font-bold  text-primaryLight" text="Estrada" />
                 </Link>
 
                 <nav data-cy="nav">
@@ -63,7 +70,10 @@ const Header: React.FC = () => {
                         {routes.map(({ label }) => (
                             <li key={label}>
                                 <Link
-                                    className={clsx('text-m capitalize text-white', {})}
+                                    className={clsx('text-m font-bold capitalize', {
+                                        'text-secondaryDark': sticky,
+                                        'text-white': !sticky,
+                                    })}
                                     href="/"
                                     name={label.toLowerCase()}
                                     onClick={() => console.log(label)}

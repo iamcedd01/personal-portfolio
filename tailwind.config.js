@@ -15,26 +15,38 @@ const spacing = {
     '2xl': '40px',
     // eslint-disable-next-line sort-keys-fix/sort-keys-fix
     '3xl': '60px',
+    // eslint-disable-next-line sort-keys-fix/sort-keys-fix
+    '4xl': '80px',
 };
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     plugins: [require('tailwindcss'), require('precss'), require('autoprefixer')],
+    safelist: [
+        {
+            pattern: /^p(x|y)-.*/,
+        },
+    ],
     theme: {
+        colors: {
+            general: '#CCCCCC',
+            primary: '#F48882',
+            primaryDark: '#AA5F5B',
+
+            primaryLight: '#F69F9B',
+            secondary: '#25262A',
+            secondaryDark: '#1A1B20',
+
+            secondaryLight: '#2D2E32',
+
+            white: '#FFFFFF',
+        },
         extend: {
             animation: {
                 blink: 'blink 1s step-start infinite',
             },
-            colors: {
-                primary: '#F48882',
-                primaryDark: '#AA5F5B',
-                primaryLight: '#F69F9B',
 
-                secondary: '#25262A',
-                secondaryDark: '#1A1B20',
-                secondaryLight: '#2D2E32',
-            },
             fontFamily: {
                 raleway: ['Raleway', ...defaultTheme.fontFamily.sans],
             },
@@ -53,7 +65,7 @@ module.exports = {
             padding: spacing,
         },
         fontSize: spacing,
-        gap: spacing,
+        gap: { ...spacing, none: 0 },
         screens: {
             // eslint-disable-next-line sort-keys-fix/sort-keys-fix
             xs: { max: '639px' },
