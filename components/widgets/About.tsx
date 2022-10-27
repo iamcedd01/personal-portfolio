@@ -1,12 +1,21 @@
+import { useMemo } from 'react';
+
 import NextImage from 'next/image';
 
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
-import AboutSummary from './AboutSummary';
-
 const About: React.FC = () => {
+    const summaries = useMemo(
+        () => [
+            { label: 'Years of Development Experience', value: '4+' },
+            { label: 'Years of Leading Experience', value: '2' },
+            { label: 'Projects Handled', value: '20+' },
+        ],
+        []
+    );
+
     return (
         <FlexLayout>
             <div className="w-2/3">
@@ -22,9 +31,12 @@ const About: React.FC = () => {
                     text="Results-driven and motivated Full-stack developer with demonstrated experience in team leadership, improving software performance and functionality, developing and implementing innovative software solutions to boost business productivity, and creating technical documentation and architectures. I also participated in testing, debugging, and implementing system upgrades."
                 />
                 <FlexLayout className="my-l items-center gap-m">
-                    <AboutSummary label="Years of Development Experience" value="4+" />
-                    <AboutSummary label="Years of Leading Experience" value="2" />
-                    <AboutSummary label="Projects Handled" value="20+" />
+                    {summaries.map(({ label, value }, index) => (
+                        <FlexLayout className="flex-col gap-xs" key={index}>
+                            {value && <Text className="text-center text-xl font-bold" text={value} />}
+                            <Text className="text-center text-m font-bold text-general" text={label} />
+                        </FlexLayout>
+                    ))}
                 </FlexLayout>
                 <FlexLayout className="justify-center">
                     <Button outlined text="Learn More About Me" />

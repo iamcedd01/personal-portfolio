@@ -1,6 +1,6 @@
 import Section from 'components/common/Section';
 import PrimaryLayout from 'components/layouts/primary/PrimaryLayout';
-import About from 'components/widgets/about/About';
+import About from 'components/widgets/About';
 import LineDivider from 'components/widgets/divider/section/Line';
 import WaveDivider from 'components/widgets/divider/section/Wave';
 import Profile from 'components/widgets/Profile';
