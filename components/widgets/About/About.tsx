@@ -3,7 +3,8 @@ import NextImage from 'next/image';
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
-import AboutSummary from 'components/widgets/about/components/AboutSummary';
+
+import AboutSummary from './AboutSummary';
 
 const About: React.FC = () => {
     return (
