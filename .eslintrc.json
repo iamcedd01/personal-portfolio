@@ -24,7 +24,7 @@
         "curly": "error",                                                   // Enforce consistent brace style for all control statements.
         "import/no-named-as-default-member": "off",                         // Reports to use of an exported name as a property on the default export.
         "import/order": [                                                   // Enforce a convention in the order of import statements.
-            "error",
+            "warn",
             {
                 "alphabetize": {
                     "caseInsensitive": true,
