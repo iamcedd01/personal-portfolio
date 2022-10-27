@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { ICommonProps } from 'types/globals';
 
 interface IButtonProps extends ICommonProps {
-    color?: 'primary' | 'secondary' | 'accent';
+    color?: 'primary' | 'secondary';
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
     outlined?: boolean;
     text?: string;

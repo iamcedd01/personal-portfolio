@@ -1,5 +1,6 @@
 export interface ICommonProps {
     className?: string;
+    id?: string;
     name?: string;
 }
 

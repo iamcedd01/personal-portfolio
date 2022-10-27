@@ -3,8 +3,7 @@ import NextImage from 'next/image';
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
-
-import AboutSummary from './components/AboutSummary';
+import AboutSummary from 'components/widgets/about/components/AboutSummary';
 
 const About: React.FC = () => {
     return (
@@ -28,6 +27,7 @@ const About: React.FC = () => {
                 </FlexLayout>
                 <FlexLayout className="justify-center">
                     <Button outlined text="Learn More About Me" />
+                    <Button text="Download CV" />
                 </FlexLayout>
             </FlexLayout>
         </FlexLayout>

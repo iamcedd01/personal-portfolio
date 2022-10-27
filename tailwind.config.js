@@ -1,5 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 const spacing = {
     xs: '4px',
@@ -22,7 +23,14 @@ const spacing = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-    plugins: [require('tailwindcss'), require('precss'), require('autoprefixer')],
+    plugins: [
+        plugin(({ addVariant }) => {
+            addVariant('not-last', '&:not(:last-child)');
+        }),
+        require('tailwindcss'),
+        require('precss'),
+        require('autoprefixer'),
+    ],
     safelist: [
         {
             pattern: /^p(x|y)-.*/,
@@ -31,13 +39,14 @@ module.exports = {
     theme: {
         colors: {
             general: '#CCCCCC',
+            generalLight: '#F2F2F2',
+
             primary: '#F48882',
             primaryDark: '#AA5F5B',
-
             primaryLight: '#F69F9B',
+
             secondary: '#25262A',
             secondaryDark: '#1A1B20',
-
             secondaryLight: '#2D2E32',
 
             white: '#FFFFFF',

@@ -1,6 +1,7 @@
 import Section from 'components/common/Section';
 import PrimaryLayout from 'components/layouts/primary/PrimaryLayout';
-import About from 'components/widgets/About/About';
+import About from 'components/widgets/about/About';
+import LineDivider from 'components/widgets/divider/section/Line';
 import WaveDivider from 'components/widgets/divider/section/Wave';
 import Profile from 'components/widgets/Profile';
 
@@ -12,14 +13,12 @@ const Home: NextPageWithLayout = () => {
             <Section className="min-h-screen bg-secondaryDark">
                 <Profile />
             </Section>
-
-            <Section className="relative bg-secondary" fullWidth padding="none">
-                <WaveDivider className="rotate-180" />
-            </Section>
-
-            <Section className="relative bg-secondary">
+            <WaveDivider />
+            <Section className="bg-secondary">
                 <About />
             </Section>
+            <LineDivider />
+            <Section className="bg-generalLight"></Section>
         </>
     );
 };
