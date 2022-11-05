@@ -11,6 +11,11 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
                         rel="stylesheet"
                     />
+
+                    <link
+                        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+                        rel="stylesheet"
+                    />
                 </Head>
                 <body>
                     <Main />

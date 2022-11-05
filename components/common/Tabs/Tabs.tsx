@@ -13,15 +13,15 @@ interface ITabItem {
 interface ITabsProps extends ICommonProps {
     activeIndex?: number;
     onChangeTab?: (index: number) => void;
-    tabItems?: ITabItem[];
+    tabItems: ITabItem[];
 }
 
-const Tabs: React.FC<ITabsProps> = ({ activeIndex = 0, onChangeTab, tabItems }) => {
+const Tabs: React.FC<ITabsProps> = ({ activeIndex = 0, className, onChangeTab, tabItems }) => {
     const handleChangeTab = useCallback((currentIndex: number) => onChangeTab?.(currentIndex), [onChangeTab]);
 
     return (
         <div aria-label="tabs" className="flex flex-col gap-l" role="tabs">
-            <div className="mx-auto grid w-max grid-cols-3 items-center overflow-hidden rounded shadow-md">
+            <div className={clsx('mx-auto grid w-max items-center overflow-hidden rounded shadow-md', className)}>
                 {tabItems?.map(({ label }, index) => (
                     <div
                         className={clsx(

@@ -4,6 +4,7 @@ import About from 'components/widgets/About';
 import LineDivider from 'components/widgets/divider/section/Line';
 import WaveDivider from 'components/widgets/divider/section/Wave';
 import Profile from 'components/widgets/Profile';
+import Technologies from 'components/widgets/Technologies';
 
 import { NextPageWithLayout } from './page';
 
@@ -18,7 +19,9 @@ const Home: NextPageWithLayout = () => {
                 <About />
             </Section>
             <LineDivider />
-            <Section className="bg-generalLight"></Section>
+            <Section className="bg-generalLight">
+                <Technologies />
+            </Section>
         </>
     );
 };
