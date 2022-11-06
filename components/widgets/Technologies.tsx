@@ -5,11 +5,9 @@ import NextImage from 'next/image';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
-import { ITechnologyItem } from './types';
-
 const Technologies: React.FC = () => {
     const technologies = useMemo(
-        (): ITechnologyItem[] => [
+        (): Array<{ icon: string; label: string }> => [
             // Frontend
             { icon: 'javascript', label: 'JavaScript' },
             { icon: 'react', label: 'ReactJS' },
@@ -82,7 +80,7 @@ const Technologies: React.FC = () => {
                     <NextImage layout="fill" objectFit="contain" src="/images/version-control.svg" />
                 </div>
             </div>
-            <Text as="h2" className="text-center text-secondaryDark" text="Tools and Technologies" />
+            <Text as="h2" className="text-center text-secondaryDark" text="Tools & Technologies I used..." />
 
             <FlexLayout className="mt-m flex-wrap justify-center gap-xl px-l">
                 {technologies.map(({ icon, label }) => (
