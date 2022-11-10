@@ -24,7 +24,7 @@ const About: React.FC = () => {
                 </div>
             </div>
             <FlexLayout className="flex-col justify-center gap-s">
-                <Text as="h1" className="text-primaryLight" text="About Me" />
+                <Text as="h2" className="text-primaryLight" text="About Me" />
                 <Text
                     as="p"
                     className="text-justify leading-relaxed"
