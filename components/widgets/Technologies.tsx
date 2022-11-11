@@ -4,6 +4,7 @@ import NextImage from 'next/image';
 
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
+import useMediaQuery from 'lib/hooks/useMediaQuery';
 import { ITechnology } from 'types/technology';
 
 const Technologies: React.FC = () => {
@@ -74,20 +75,27 @@ const Technologies: React.FC = () => {
         []
     );
 
+    const isMobile = useMediaQuery({ value: 768 });
+
+    const iconSize = useMemo((): number => (isMobile ? 32 : 48), [isMobile]);
+
     return (
         <FlexLayout className="flex-col gap-m">
             <div className="mx-auto w-full">
-                <div className="relative h-[200px] w-full">
+                <div className="relative h-40 w-full md:h-52">
                     <NextImage layout="fill" objectFit="contain" src="/images/version-control.svg" />
                 </div>
             </div>
-            <Text as="h2" className="text-center text-secondaryDark" text="Tools & Technologies I used..." />
-
-            <FlexLayout className="mt-m flex-wrap justify-center gap-xl px-l">
+            <Text
+                as="h2"
+                className="px-m text-center text-secondaryDark md:px-0"
+                text="Tools & Technologies I used..."
+            />
+            <FlexLayout className="mt-m flex-wrap justify-center gap-l md:gap-xl md:px-l">
                 {technologies.map(({ icon, label }) => (
-                    <FlexLayout className="w-max flex-col gap-s transition-all hover:scale-125" key={label}>
-                        <NextImage alt={label} height={48} src={`/icons/${icon}.svg`} width={48} />
-                        <Text as="p" className="text-center text-generalDark" text={label} />
+                    <FlexLayout className="w-max flex-col gap-m transition-all hover:scale-125" key={label}>
+                        <NextImage alt={label} height={iconSize} src={`/icons/${icon}.svg`} width={iconSize} />
+                        <Text as="p" className="text-center text-[12px] text-generalDark" text={label} />
                     </FlexLayout>
                 ))}
             </FlexLayout>

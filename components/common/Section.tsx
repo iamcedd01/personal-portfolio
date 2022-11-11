@@ -26,8 +26,8 @@ const Section = React.forwardRef<HTMLDivElement, ISectionProps>(
                 className={clsx(
                     'm-auto w-full',
                     {
+                        'max-w-[768px] px-6 md:max-w-full xl:max-w-wrapper': !fullWidth,
                         'max-w-full': fullWidth,
-                        'px-6 xs:max-w-[768px] lg:px-0 xl:max-w-wrapper': !fullWidth,
                         [useValueAndKey(padding, 'py') as string]: !!padding,
                     },
                     wrapperClassName

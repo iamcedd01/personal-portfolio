@@ -7,10 +7,10 @@ import { FlexLayout } from 'components/layouts/content';
 
 const Profile: React.FC = () => {
     return (
-        <FlexLayout className="flex-col-reverse justify-between gap-2xl lg:flex-row xl:flex-row 2xl:flex-row">
-            <FlexLayout className="w-3/4 flex-col justify-center gap-none">
-                <Text className="text-l font-bold leading-tight" text="Hey There!" />
-                <Text className="text-2xl leading-tight tracking-wider">
+        <FlexLayout className="flex-col-reverse justify-between gap-2xl md:flex-row xl:flex-row 2xl:flex-row">
+            <FlexLayout className="flex-col justify-center gap-none md:w-3/4">
+                <Text className="font-bold leading-tight md:text-l" text="Hey There!" />
+                <Text className="text-[26px] leading-tight tracking-wider md:text-2xl">
                     I am <Typed values={['Cedric Estrada', 'Fullstack Developer', 'Freelancer']} />
                 </Text>
                 <Text
@@ -22,7 +22,7 @@ const Profile: React.FC = () => {
                 </div>
             </FlexLayout>
             <div className="flex justify-center">
-                <div className="relative flex items-center justify-center overflow-hidden rounded-full border-8 border-solid border-secondaryLight md:h-[420px] md:w-[420px]">
+                <div className="relative flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-8 border-solid border-secondaryLight sm:h-60 sm:w-60 md:h-[420px] md:w-[420px]">
                     <NextImage layout="fill" objectFit="cover" src="/images/me.png" />
                 </div>
             </div>

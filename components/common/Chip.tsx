@@ -14,8 +14,8 @@ const Chip: React.FC<IChipProps> = ({ className, size = 'medium', text }) => (
         className={clsx(
             'inline-flex max-w-full items-center justify-center rounded-full border border-general text-center',
             {
-                ['min-h-6 px-s text-[0.625rem]']: size === 'small',
-                ['min-h-8 px-3 text-[0.875rem]']: size === 'medium',
+                ['md:min-h-6 px-s text-[0.625rem]']: size === 'small',
+                ['md:min-h-8 px-3 text-[0.875rem]']: size === 'medium',
             },
             className
         )}

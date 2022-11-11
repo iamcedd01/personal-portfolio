@@ -17,28 +17,28 @@ const About: React.FC = () => {
     );
 
     return (
-        <FlexLayout className="gap-2xl">
-            <div className="w-2/3">
-                <div className="relative max-h-max min-h-[400px] w-full">
+        <FlexLayout className="flex-col gap-m md:flex-row md:gap-2xl">
+            <div className="w-full md:w-2/3">
+                <div className="relative mx-auto h-48 w-48 md:max-h-max md:min-h-[400px] md:w-full">
                     <NextImage layout="fill" objectFit="contain" src="/images/developer.svg" />
                 </div>
             </div>
             <FlexLayout className="flex-col justify-center gap-s">
-                <Text as="h2" className="text-primaryLight" text="About Me" />
+                <Text as="h2" className="text-center text-primaryLight md:text-left" text="About Me" />
                 <Text
                     as="p"
-                    className="text-justify leading-relaxed"
+                    className="text-center leading-relaxed md:text-justify"
                     text="Results-driven and motivated Full-stack developer with demonstrated experience in team leadership, improving software performance and functionality, developing and implementing innovative software solutions to boost business productivity, and creating technical documentation and architectures. I also participated in testing, debugging, and implementing system upgrades."
                 />
                 <FlexLayout className="my-l items-center gap-m">
                     {summaries.map(({ label, value }, index) => (
                         <FlexLayout className="flex-col gap-xs" key={index}>
-                            {value && <Text className="text-center text-xl font-bold" text={value} />}
-                            <Text className="text-center text-m font-bold text-general" text={label} />
+                            {value && <Text className="text-center text-l font-bold md:text-xl" text={value} />}
+                            <Text className="text-center text-[12px] font-bold text-general md:text-m" text={label} />
                         </FlexLayout>
                     ))}
                 </FlexLayout>
-                <FlexLayout className="justify-center gap-xl">
+                <FlexLayout className="flex-col justify-center gap-xs sm:flex-row sm:gap-xl">
                     <Button outlined text="Learn More About Me" />
                     <Button text="Download CV" />
                 </FlexLayout>

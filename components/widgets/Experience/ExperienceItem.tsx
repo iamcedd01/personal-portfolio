@@ -25,7 +25,7 @@ const ExperienceItem: React.FC<IExperienceItemProps> = ({
         <div className="relative w-full pl-xl before:absolute before:-top-3 before:-left-[17px] before:h-8 before:w-8 before:rounded-full before:border-8 before:border-secondaryDark before:bg-primaryLight before:content-['']">
             <FlexLayout className="flex-col rounded-md bg-secondaryLight p-m transition-all hover:scale-105">
                 <FlexLayout className="items-center gap-s">
-                    <Text as="p" className="text-m font-bold" text={position} />
+                    <Text as="p" className="flex-1 text-m font-bold" text={position} />
                     <Chip size="small" text={type} />
                 </FlexLayout>
 
