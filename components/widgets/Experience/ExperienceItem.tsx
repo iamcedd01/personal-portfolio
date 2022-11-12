@@ -6,7 +6,7 @@ import { FlexLayout } from 'components/layouts/content';
 import { IExperience } from 'types/experience';
 
 interface IExperienceItemProps extends IExperience {
-    isFreelance?: boolean;
+    showDuration?: boolean;
 }
 
 const ExperienceItem: React.FC<IExperienceItemProps> = ({
@@ -15,6 +15,7 @@ const ExperienceItem: React.FC<IExperienceItemProps> = ({
     location,
     position,
     summaries = [],
+    showDuration = true,
     to,
     type,
 }) => {
@@ -29,7 +30,7 @@ const ExperienceItem: React.FC<IExperienceItemProps> = ({
                     <Chip size="small" text={type} />
                 </FlexLayout>
 
-                <Text className="text-[14px]" text={duration} />
+                {showDuration && <Text className="text-[14px]" text={duration} />}
                 <Text className="text-[14px]" text={companyLocation} />
 
                 {summaries.length > 0 && (

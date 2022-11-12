@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
                 from: 'Aug 2015',
                 id: 'SH-001',
                 location: 'Daegu, South Korea',
-                position: 'Remote Game Master',
+                position: 'Remote Game Master - Ran Online',
                 summaries: [
                     'Conducted daily in-game monitoring',
                     'Conducted internal investigations (hacking, bugs & system glitches)',
@@ -150,7 +150,7 @@ const Experience: React.FC = () => {
                 <div className="mt-8 h-max w-full md:sticky md:top-20 md:mt-0">
                     <FlexLayout className="relative flex-col gap-l border-l-2 border-solid border-generalDark">
                         {sideHustles.map(item => (
-                            <ExperienceItem key={item.id} {...item} />
+                            <ExperienceItem key={item.id} showDuration={false} {...item} />
                         ))}
                     </FlexLayout>
                 </div>
