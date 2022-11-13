@@ -59,7 +59,7 @@ const Technologies: React.FC = () => {
             { icon: 'eslint', label: 'ESLint' },
             { icon: 'prettier', label: 'Prettier' },
             { icon: 'commitlint', label: 'Commitlint' },
-            { icon: 'javascript', label: 'SonarQube' },
+            { icon: 'sonarqube', label: 'SonarQube' },
             { icon: 'git', label: 'Git' },
             { icon: 'github', label: 'Github' },
             { icon: 'gitlab', label: 'Gitlab' },
