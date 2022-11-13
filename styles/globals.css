@@ -10,7 +10,7 @@
 
     button {
         line-height: 1.75;
-        @apply relative my-2 box-border inline-flex min-w-[64px] cursor-pointer appearance-none items-center justify-center rounded border-none px-8 py-2 align-middle text-m uppercase text-white outline-none transition-all duration-200;
+        @apply relative my-2 box-border inline-flex w-max min-w-[64px] cursor-pointer appearance-none items-center justify-center rounded border-none px-8 py-2 align-middle text-m uppercase text-white outline-none transition-all duration-200;
     }
 
     h1,

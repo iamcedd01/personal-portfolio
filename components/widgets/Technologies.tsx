@@ -94,7 +94,7 @@ const Technologies: React.FC = () => {
             <FlexLayout className="mt-m flex-wrap justify-center gap-l md:gap-xl md:px-l">
                 {technologies.map(({ icon, label }) => (
                     <FlexLayout className="w-max flex-col gap-m transition-all hover:scale-125" key={label}>
-                        <NextImage alt={label} height={iconSize} src={`/icons/${icon}.svg`} width={iconSize} />
+                        <NextImage alt={label} height={iconSize} src={`/icons/tech/${icon}.svg`} width={iconSize} />
                         <Text as="p" className="text-center text-[12px] text-generalDark" text={label} />
                     </FlexLayout>
                 ))}

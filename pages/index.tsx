@@ -1,9 +1,8 @@
 import Section from 'components/common/Section';
 import PrimaryLayout from 'components/layouts/primary/PrimaryLayout';
 import About from 'components/widgets/About';
-import DiagonalDivider from 'components/widgets/divider/section/Diagonal';
-import LineDivider from 'components/widgets/divider/section/Line';
-import WaveDivider from 'components/widgets/divider/section/Wave';
+import Contact from 'components/widgets/Contact/Contact';
+import SectionDivider from 'components/widgets/divider/section';
 import Experience from 'components/widgets/Experience';
 import Profile from 'components/widgets/Profile';
 import Technologies from 'components/widgets/Technologies';
@@ -16,17 +15,21 @@ const Home: NextPageWithLayout = () => {
             <Section className="min-h-screen bg-secondaryDark">
                 <Profile />
             </Section>
-            <WaveDivider />
+            <SectionDivider className="relative bg-secondary" shape="Wave" />
             <Section className="bg-secondary">
                 <About />
             </Section>
-            <LineDivider />
+            <SectionDivider className="bg-secondary" shape="Line" />
             <Section className="bg-generalLight">
                 <Technologies />
             </Section>
-            <DiagonalDivider />
+            <SectionDivider className="bg-generalLight" shape="Diagonal" />
             <Section className="bg-secondaryDark">
                 <Experience />
+            </Section>
+            <SectionDivider className="bg-generalLight" shape="WaveOpacity" />
+            <Section className="bg-generalLight">
+                <Contact />
             </Section>
         </>
     );
