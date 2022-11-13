@@ -1,9 +1,12 @@
 import { useMemo } from 'react';
 
+import NextImage from 'next/image';
+
+import Link from 'components/common/Link';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
-import ContactItem from './ContactItem';
+import Social from './Social';
 
 const Contact: React.FC = () => {
     const contacts = useMemo(
@@ -19,14 +22,6 @@ const Contact: React.FC = () => {
         []
     );
 
-    const socials = useMemo(
-        () => [
-            { id: 'github', url: 'https://github.com/iamcedd01', value: '@iamcedd01' },
-            { id: 'linkedin', url: 'https://www.linkedin.com/in/cedricestrada/', value: '@cedricestrada' },
-        ],
-        []
-    );
-
     return (
         <FlexLayout className="flex-col gap-m">
             <Text as="h2" className="text-center text-secondaryDark" text="Get in Touch" />
@@ -38,15 +33,21 @@ const Contact: React.FC = () => {
             />
 
             <FlexLayout className="flex flex-wrap justify-center gap-m">
-                {contacts.map(item => {
-                    return <ContactItem key={item.id} {...item} />;
+                {contacts.map(({ id, url, value }) => {
+                    const urlPrefix = id === 'phone' ? 'tel:' : id === 'email' ? 'mailto:' : '';
+                    const target = !urlPrefix ? '_blank' : '';
+
+                    return (
+                        <Link className="w-max" href={`${urlPrefix}${url || value}`} key={id} target={target}>
+                            <FlexLayout className="w-max gap-s">
+                                <NextImage height={20} src={`/icons/${id}.svg`} width={20} />
+                                <Text className="font-bold text-secondaryDark" text={value} />
+                            </FlexLayout>
+                        </Link>
+                    );
                 })}
             </FlexLayout>
-            <FlexLayout className="flex flex-wrap justify-center gap-m">
-                {socials.map(item => (
-                    <ContactItem key={item.id} {...item} />
-                ))}
-            </FlexLayout>
+            <Social className="justify-center" showLabel />
         </FlexLayout>
     );
 };

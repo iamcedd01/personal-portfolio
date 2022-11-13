@@ -5,6 +5,7 @@ import { ICommonProps } from 'types/globals';
 
 import DiagonalDivider from './Diagonal';
 import LineDivider from './Line';
+import TriangleDivider from './Triangle';
 import WaveDivider from './Wave';
 import WaveOpacityDivider from './WaveOpacity';
 
@@ -12,7 +13,6 @@ enum ESectionDivider {
     Diagonal = 'Diagonal',
     Line = 'Line',
     Triangle = 'Triangle',
-    TriangleAsymmetrical = 'Triange Asymmetrical',
     Wave = 'Wave',
     WaveOpacity = 'Wave Opacity',
 }
@@ -24,6 +24,8 @@ interface ISectionDividerProps extends ICommonProps {
 const SectionDivider: React.FC<ISectionDividerProps> = ({ className, shape }) => {
     const shapeDivider = useMemo((): React.ReactNode => {
         switch (ESectionDivider[shape]) {
+            case ESectionDivider.Triangle:
+                return <TriangleDivider />;
             case ESectionDivider.Diagonal:
                 return <DiagonalDivider />;
             case ESectionDivider.Line:

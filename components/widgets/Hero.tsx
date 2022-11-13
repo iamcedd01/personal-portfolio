@@ -5,7 +5,7 @@ import Text from 'components/common/Text';
 import Typed from 'components/common/Typed';
 import { FlexLayout } from 'components/layouts/content';
 
-const Profile: React.FC = () => {
+const Hero: React.FC = () => {
     return (
         <FlexLayout className="flex-col-reverse justify-between gap-2xl md:flex-row xl:flex-row 2xl:flex-row">
             <FlexLayout className="flex-col justify-center gap-none md:w-3/4">
@@ -30,4 +30,4 @@ const Profile: React.FC = () => {
     );
 };
 
-export default Profile;
+export default Hero;

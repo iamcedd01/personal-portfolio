@@ -2,6 +2,7 @@ import NextHead from 'next/head';
 
 import { FlexLayout } from 'components/layouts/content';
 
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 export interface IPrimaryLayoutProps {
@@ -16,6 +17,7 @@ const PrimaryLayout: React.FC<IPrimaryLayoutProps> = ({ children, title }) => {
             </NextHead>
             <Header />
             <main>{children}</main>
+            <Footer />
         </FlexLayout>
     );
 };

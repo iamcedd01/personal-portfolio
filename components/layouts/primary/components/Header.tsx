@@ -1,14 +1,14 @@
-import { ComponentType, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import clsx from 'clsx';
+import { Link as ScrollLink } from 'react-scroll';
 
-import Link from 'components/common/Link';
 import Section from 'components/common/Section';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
 interface IRoute {
-    icon?: ComponentType;
+    href: string;
     label: string;
 }
 
@@ -18,12 +18,11 @@ const Header: React.FC = () => {
 
     const routes = useMemo(
         (): IRoute[] => [
-            { label: 'Home' },
-            { label: 'About' },
-            { label: 'Service' },
-            { label: 'Portfolio' },
-            { label: 'Resume' },
-            { label: 'Contact' },
+            { href: 'hero', label: 'Home' },
+            { href: 'about', label: 'About' },
+            { href: 'skills', label: 'Skills' },
+            { href: 'experience', label: 'Experience' },
+            { href: 'contact', label: 'Contact' },
         ],
         []
     );
@@ -46,7 +45,7 @@ const Header: React.FC = () => {
         <Section
             as="header"
             className={clsx('fixed top-0 left-0 z-10 h-[unset] transition-all duration-300', {
-                'bg-white': sticky,
+                'bg-generalLight shadow-md': sticky,
             })}
             name="header"
             padding={sticky ? 'm' : '2xl'}
@@ -54,32 +53,45 @@ const Header: React.FC = () => {
             wrapperClassName="transition-all duration-300"
         >
             <FlexLayout className="items-center justify-between">
-                <Link className="text-l capitalize tracking-widest" href="/" name="brand">
+                <ScrollLink
+                    className="w-full cursor-pointer text-l capitalize tracking-widest"
+                    duration={500}
+                    name="brand"
+                    smooth
+                    to="hero"
+                >
                     <Text
                         className={clsx('font-extrabold', {
                             'text-secondaryDark': sticky,
                             'text-white': !sticky,
                         })}
-                        text="Cedd"
-                    />{' '}
-                    <Text className="font-bold  text-primaryLight" text="Estrada" />
-                </Link>
+                    >
+                        Cedd <Text className="font-bold  text-primaryLight" text="Estrada" />
+                    </Text>
+                </ScrollLink>
 
                 <nav data-cy="nav">
                     <ul className="flex items-center gap-xl">
-                        {routes.map(({ label }) => (
+                        {routes.map(({ href, label }) => (
                             <li key={label}>
-                                <Link
-                                    className={clsx('text-m font-bold capitalize', {
-                                        'text-secondaryDark': sticky,
-                                        'text-white': !sticky,
-                                    })}
-                                    href="/"
+                                <ScrollLink
+                                    activeClass="text-primary"
+                                    className={clsx(
+                                        'cursor-pointer text-m font-bold capitalize hover:text-primary active:text-primary',
+                                        {
+                                            'text-secondaryDark': sticky,
+                                            'text-white': !sticky,
+                                        }
+                                    )}
+                                    duration={500}
                                     name={label.toLowerCase()}
-                                    onClick={() => console.log(label)}
+                                    offset={-80}
+                                    smooth
+                                    spy
+                                    to={href}
                                 >
                                     {label}
-                                </Link>
+                                </ScrollLink>
                             </li>
                         ))}
                     </ul>

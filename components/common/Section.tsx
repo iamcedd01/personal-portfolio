@@ -14,12 +14,13 @@ interface ISectionProps extends ICommonProps {
 }
 
 const Section = React.forwardRef<HTMLDivElement, ISectionProps>(
-    ({ as = 'section', children, className, fullWidth, name, padding = '4xl', wrapperClassName }, ref) =>
+    ({ as = 'section', children, className, fullWidth, id, name, padding = '4xl', wrapperClassName }, ref) =>
         createElement(
             as,
             {
                 className: clsx('section', className),
                 ['data-cy']: useValueAndKey(name, 'section'),
+                id,
                 ref,
             },
             <div
