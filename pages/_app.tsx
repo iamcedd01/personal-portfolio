@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }: IAppProps) {
     return (
         <>
             <NextHead>
-                <title>Cedric Estrada - Fullstack Developer</title>
                 <meta content="initial-scale=1, width=device-width" name="viewport" />
             </NextHead>
             {getLayout(<Component {...pageProps} />)}

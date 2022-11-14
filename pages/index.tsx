@@ -39,5 +39,5 @@ const Home: NextPageWithLayout = () => {
 export default Home;
 
 Home.getLayout = page => {
-    return <PrimaryLayout>{page}</PrimaryLayout>;
+    return <PrimaryLayout title="Cedric Estrada - Fullstack Developer">{page}</PrimaryLayout>;
 };
