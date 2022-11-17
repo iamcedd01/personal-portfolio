@@ -13,7 +13,7 @@ import HeaderNav from './components/HeaderNav';
 import Logo from './components/Logo';
 
 const Header: React.FC = () => {
-    const { isDrawerOpen, isMobile, setIsDrawerOpen } = useAppContext();
+    const { isMobile, setIsDrawerOpen } = useAppContext();
 
     const headerOffset = useRef<HTMLDivElement>(null);
     const [sticky, setSticky] = useState<boolean>(false);
