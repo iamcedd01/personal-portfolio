@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
 
+import { AppProvider } from 'context/AppContext';
+
 import 'styles/globals.css';
 
 import { NextPageWithLayout } from './page';
@@ -16,9 +18,9 @@ function MyApp({ Component, pageProps }: IAppProps) {
     return (
         <>
             <NextHead>
-                <meta content="initial-scale=1, width=device-width" name="viewport" />
+                <meta content="initial-scale=1, width=device-width, viewport-fit=cover, minimal-ui" name="viewport" />
             </NextHead>
-            {getLayout(<Component {...pageProps} />)}
+            <AppProvider>{getLayout(<Component {...pageProps} />)}</AppProvider>
         </>
     );
 }

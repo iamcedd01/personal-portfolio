@@ -24,11 +24,11 @@ const Home: NextPageWithLayout = () => {
                 <Technologies />
             </Section>
             <SectionDivider className="bg-generalLight" shape="Diagonal" />
-            <Section className="bg-secondaryDark pb-4xl" id="experience">
+            <Section className="bg-secondaryDark md:pb-4xl" id="experience">
                 <Experience />
             </Section>
             <SectionDivider className="bg-generalLight" shape="WaveOpacity" />
-            <Section className="bg-generalLight py-4xl" id="contact">
+            <Section className="bg-generalLight md:py-4xl" id="contact">
                 <Contact />
             </Section>
             <SectionDivider className="bg-secondary" shape="Triangle" />

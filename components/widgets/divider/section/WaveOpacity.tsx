@@ -1,7 +1,7 @@
 const WaveOpacityDivider: React.FC = () => (
     <div className="w-full overflow-hidden">
         <svg
-            className="relative block h-[150px] w-full"
+            className="relative block h-16 w-full md:h-[150px]"
             data-name="Layer 1"
             preserveAspectRatio="none"
             viewBox="0 0 1200 120"

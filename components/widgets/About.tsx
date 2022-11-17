@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import NextImage from 'next/image';
+import { Link as ScrollLink } from 'react-scroll';
 
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
@@ -39,8 +40,10 @@ const About: React.FC = () => {
                     ))}
                 </FlexLayout>
                 <FlexLayout className="flex-col justify-center gap-xs sm:flex-row sm:gap-xl">
-                    <Button outlined text="Learn More About Me" />
-                    <Button text="Download CV" />
+                    <ScrollLink duration={500} offset={-80} smooth to="experience">
+                        <Button className="w-full md:w-auto" outlined text="Learn More About Me" />
+                    </ScrollLink>
+                    <Button className="w-full md:w-auto" text="Download CV" />
                 </FlexLayout>
             </FlexLayout>
         </FlexLayout>

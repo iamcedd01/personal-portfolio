@@ -4,10 +4,12 @@ import NextImage from 'next/image';
 
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
-import useMediaQuery from 'lib/hooks/useMediaQuery';
+import { useAppContext } from 'context/AppContext';
 import { ITechnology } from 'types/technology';
 
 const Technologies: React.FC = () => {
+    const { isMobile } = useAppContext();
+
     const technologies = useMemo(
         (): ITechnology[] => [
             // Frontend
@@ -74,8 +76,6 @@ const Technologies: React.FC = () => {
         ],
         []
     );
-
-    const isMobile = useMediaQuery({ value: 768 });
 
     const iconSize = useMemo((): number => (isMobile ? 32 : 48), [isMobile]);
 

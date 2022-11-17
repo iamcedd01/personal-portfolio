@@ -60,6 +60,7 @@ module.exports = {
             fontFamily: {
                 raleway: ['Raleway', ...defaultTheme.fontFamily.sans],
             },
+            height: spacing,
             keyframes: {
                 blink: {
                     '50%': { opacity: 0 },
@@ -73,6 +74,7 @@ module.exports = {
                 navbar: '68px',
             },
             padding: spacing,
+            width: spacing,
         },
         fontSize: spacing,
         gap: { ...spacing, none: 0 },
