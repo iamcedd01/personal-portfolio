@@ -4,6 +4,7 @@ import NextImage from 'next/image';
 import { Link as ScrollLink } from 'react-scroll';
 
 import Button from 'components/common/Button';
+import Link from 'components/common/Link';
 import Text from 'components/common/Text';
 import { FlexLayout } from 'components/layouts/content';
 
@@ -43,7 +44,9 @@ const About: React.FC = () => {
                     <ScrollLink duration={500} offset={-80} smooth to="experience">
                         <Button className="w-full md:w-auto" outlined text="Learn More About Me" />
                     </ScrollLink>
-                    <Button className="w-full md:w-auto" text="Download CV" />
+                    <Link href={process.env.NEXT_PUBLIC_RESUME_URL as string} target="_blank">
+                        <Button className="w-full md:w-auto" text="Download CV" />
+                    </Link>
                 </FlexLayout>
             </FlexLayout>
         </FlexLayout>

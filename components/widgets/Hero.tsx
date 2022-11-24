@@ -1,4 +1,5 @@
 import NextImage from 'next/image';
+import { Link as ScrollLink } from 'react-scroll';
 
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
@@ -17,7 +18,9 @@ const Hero: React.FC = () => {
                     className="py-m text-justify"
                     text="A professional software engineer with more than four years of experience. If you're looking for a full-stack developer to build your applications and grow your business, you've found what you need. Let's Work Together!"
                 />
-                <Button className="w-full md:w-max" text="Contact Me" />
+                <ScrollLink duration={500} offset={-20} smooth to="contact">
+                    <Button className="w-full md:w-max" text="Contact Me" />
+                </ScrollLink>
             </FlexLayout>
             <div className="flex justify-center">
                 <div className="relative flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-8 border-solid border-secondaryLight sm:h-60 sm:w-60 md:h-[420px] md:w-[420px]">
