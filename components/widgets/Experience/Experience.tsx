@@ -55,6 +55,19 @@ const Experience: React.FC = () => {
         (): IExperience[] => [
             {
                 company: 'Luxclusif | Penbrothers Inc.',
+                from: 'Feb 2023',
+                id: 'PE-001',
+                location: 'Makati City, Metro Manila',
+                position: 'Senior Software Engineer - Frontend',
+                summaries: [
+                    'Mentor and provide guidance to junior developers, promoting knowledge sharing and professional growth within the team.',
+                    'Continuously improve development processes, tools, and methodologies to enhance productivity and efficiency.',
+                ],
+                to: '',
+                type: EExperienceType.FullTime,
+            },
+            {
+                company: 'Luxclusif | Penbrothers Inc.',
                 from: 'May 2022',
                 id: 'PE-001',
                 location: 'Makati City, Metro Manila',
@@ -65,7 +78,7 @@ const Experience: React.FC = () => {
                     'Build design system and UI components with integration of Storybook',
                     'Employ best coding practices and techniques to work on different software projects',
                 ],
-                to: '',
+                to: 'Feb 2023',
                 type: EExperienceType.FullTime,
             },
             {

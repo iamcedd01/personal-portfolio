@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
     const contacts = useMemo(
         () => [
             { id: 'phone', value: '+639171402480' },
-            { id: 'email', value: 'ecedd2018@gmail.com' },
+            { id: 'email', value: 'iamcedd01@gmail.com' },
             {
                 id: 'address',
                 url: 'https://www.google.com/maps/place/Salawag,+Dasmari%C3%B1as,+Cavite/@14.3414944,120.966288,14z/data=!3m1!4b1!4m5!3m4!1s0x3397d4202af95fbb:0x9281647cdf10570f!8m2!3d14.3406895!4d120.9825461',
