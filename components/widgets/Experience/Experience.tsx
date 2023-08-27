@@ -19,7 +19,7 @@ const Experience: React.FC = () => {
                     'Provided software development and maintenance for healthcare microservice applications using MERN Stack',
                     'Responsible for quickly identifying and correcting software and data errors, and providing a root cause analysis to share with the team',
                 ],
-                to: '',
+                to: 'Jun 2023',
                 type: EExperienceType.PartTime,
             },
             {
@@ -28,8 +28,11 @@ const Experience: React.FC = () => {
                 id: 'SH-002',
                 location: 'Makati City, Metro Manila',
                 position: 'React Developer',
-                summaries: [],
-                to: 'Sep 2022',
+                summaries: [
+                    'Developed part of application and implement new features for Insurance and Investment Management System using React JS.',
+                    'Investigate, analyze, debug, and provide root cause analysis to fix and address software issues and vulnerabilities.',
+                ],
+                to: 'Jun 2023',
                 type: EExperienceType.PartTime,
             },
             {
